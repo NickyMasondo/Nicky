@@ -75,12 +75,12 @@ function forecastDisplay(response) {
 
   response.data.daily.forEach(function (day, index) {
     if (index < 5) {
-      weatherHtmlHtml =
-        weatherHtmltHtml +
+      weatherHtml =
+        weatherHtml +
         `
      <div class="row">
        <div class="col-2">
-         <div class="weather-date">${formatDay(day.time)}</div>
+         <div class="weather-date">${formatDate(day.time)}</div>
          <div class="image-1">
            <img
              src="${day.condition.icon_url}"
