@@ -18,6 +18,8 @@ function displayTemperature(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   timeElement.innerHTML = date;
+
+  grabForecast(response.data.city);
 }
 
 function search(event) {
