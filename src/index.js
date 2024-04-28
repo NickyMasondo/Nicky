@@ -3,12 +3,21 @@ function displayTemperature(response) {
   let temperature = Math.round(response.data.temperature.current);
   let cityElement = document.querySelector("#current-city");
   let discriptionElement = document.querySelector("#discription");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let timeElement = document.querySelector("#current-time");
+  let date = currentDate(new Date(response.data.time * 1000));
+  let iconElement = document.querySelector("#icon");
 
-  console.log(response.data.condition.description);
+  iconElement.innerHTML = `<img src = "${response.data.condition.icon_url}">`;
+  temperature.innerHTML = Math.round(realtimeTemp);
 
   cityElement.innerHTML = response.data.city;
   discriptionElement.innerHTML = response.data.condition.discription;
-  temperatureElement.innerHTML = temperature;
+  temperatureElement.innerHTML = Math.round(temperature);
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windElement.innerHTML = `${response.data.wind.speed}km/h`;
+  timeElement.innerHTML = date;
 }
 
 function search(event) {
