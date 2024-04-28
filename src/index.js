@@ -19,7 +19,7 @@ function displayTemperature(response) {
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   timeElement.innerHTML = date;
 
-  grabForecast(response.data.city);
+  getweather(response.data.city);
 }
 
 function search(event) {
